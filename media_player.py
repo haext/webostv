@@ -321,13 +321,15 @@ class LgWebOSMediaPlayerEntity(RestoreEntity, MediaPlayerEntity):
             if source["appId"] == LIVE_TV_APP_ID:
                 found_live_tv = True
             if source["appId"] == tv_state.current_app_id:
-                self._current_source = source["label"]
+                self._current_source = source["id"]
+                self._source_list[source["id"]] = source
                 self._source_list[source["label"]] = source
             elif (
                 not conf_sources
                 or source["label"] in conf_sources
                 or any(source["label"].find(word) != -1 for word in conf_sources)
             ):
+                self._source_list[source["id"]] = source
                 self._source_list[source["label"]] = source
 
         # empty list, TV may be off, keep previous list
