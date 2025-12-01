@@ -1,7 +1,7 @@
 {
   "domain": "webostv",
-  "name": "LG webOS TV",
-  "codeowners": ["@thecode"],
+  "name": "LG webOS TV (With Inputs)",
+  "codeowners": ["@gdgib"],
   "config_flow": true,
   "documentation": "https://www.home-assistant.io/integrations/webostv",
   "iot_class": "local_push",
@@ -11,5 +11,6 @@
     {
       "st": "urn:lge-com:service:webos-second-screen:1"
     }
-  ]
+  ],
+  "version": "0.0.1"
 }
